@@ -76,3 +76,9 @@ python self_ade.py --config-file configs/clipart_self_ade.yaml --weights checkpo
 
 The code will output mAP values for different numbers of iterations.
 To experiment on a different target, switch clipart with comic or watercolor.
+
+To pre-train your own model, run:
+
+```
+python train_ssd.py --config-file configs/baseline_rs.yaml
+```
