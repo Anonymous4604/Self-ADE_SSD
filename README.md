@@ -8,7 +8,11 @@ Clone this repository:
 
 ```
 git clone https://github.com/Anonymous4604/Self-ADE_SSD
-cd Self-ADE_SSD
+```
+
+Install pytorch
+```
+pip install torch==1.2.0
 ```
 
 Download and compile apex:
@@ -25,6 +29,7 @@ python setup.py install --cuda_ext --cpp_ext
 
 Install dependencies:
 ```
+cd ../Self-ADE_SSD
 pip install -r requirements.txt
 ```
 
@@ -57,10 +62,15 @@ Self-ADE_SSD:
 
 ## Run
 
-To pre-train your own model, run:
+To pre-train your own model dowload ImageNet vgg from:
 
 ```
-python train_ssd.py --config-file configs/baseline_rs.yaml
+wget https://s3.amazonaws.com/amdegroot-models/vgg16_reducedfc.pth
+```
+
+then run
+```
+python train_ssd.py --config-file configs/baseline_rs.yaml --vgg vgg16_reducedfc.pth
 ```
 
 Test the pre-trained model on clipart to check mAP
@@ -78,9 +88,3 @@ python self_ade.py --config-file configs/clipart_self_ade.yaml --weights /path/t
 
 The code will output mAP values for different numbers of iterations.
 To experiment on a different target, switch clipart with comic or watercolor.
-
-To pre-train your own model, run:
-
-```
-python train_ssd.py --config-file configs/baseline_rs.yaml
-```
