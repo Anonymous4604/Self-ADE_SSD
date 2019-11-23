@@ -57,12 +57,7 @@ Self-ADE_SSD:
 
 ### Pretrained Model
 
-We provide one model pre-trained on VOC2007 trainval + VOC2012 trainval (detection and rotation tasks).
-
-```
-cat checkpoints/pretrained* > checkpoints/pretrained.tar.gz
-tar -C checkpoints -zxvf checkpoints/pretrained.tar.gz
-```
+We provide one model pre-trained on VOC2007 trainval + VOC2012 trainval (detection and rotation tasks) in checkpoints folder.
 
 ## Run
 
