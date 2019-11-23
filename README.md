@@ -83,7 +83,7 @@ Run Adaptive evaluation on clipart using the pre-trained model
 
 ```
 python self_ade.py --config-file configs/clipart_self_ade.yaml --weights /path/to/last/checkpoint.pth
---warmup_step 20 --self_ade_iterations 50 MODEL.SELF_SUPERVISOR.SELF_ADE_BREAKPOINTS 21,25,30,35,40,
+--warmup_steps 20 --self_ade_iterations 50 MODEL.SELF_SUPERVISOR.SELF_ADE_BREAKPOINTS 21,25,30,35,40,
 ```
 
 The code will output mAP values for different numbers of iterations.
