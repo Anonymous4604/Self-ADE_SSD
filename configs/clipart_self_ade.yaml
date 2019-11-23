@@ -1,0 +1,15 @@
+MODEL:
+  NUM_CLASSES: 21
+  SELF_SUPERVISED: True
+  SELF_SUPERVISOR:
+    TYPE: "rotation"
+    DROPOUT: 0.5
+    SELF_ADE_BREAKPOINTS: (21,25,30,35,40)
+INPUT:
+  IMAGE_SIZE: 300
+DATASETS:
+  TEST: ("clipart_test",)
+SOLVER:
+  BATCH_SIZE: 32
+  LR: 1e-5
+OUTPUT_DIR: 'output_clipart_self_ade'
