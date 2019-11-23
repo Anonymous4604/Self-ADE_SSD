@@ -59,7 +59,7 @@ def evaluation(cfg, args, weights_file, output_dir, distributed):
         os.makedirs(output_dir)
     device = torch.device(cfg.MODEL.DEVICE)
     model = build_ssd_model(cfg)
-    model.load(weights_file)
+    model.load(open(weights_file, 'rb'))
     logger = logging.getLogger("SSD.inference")
     logger.info('Loaded weights from {}.'.format(weights_file))
     model.to(device)

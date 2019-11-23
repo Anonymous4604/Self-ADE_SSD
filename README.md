@@ -28,7 +28,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-## Download data and pretrained model
+## Download data
 
 ### Datasets
 
@@ -55,22 +55,24 @@ Self-ADE_SSD:
      - ...
 ```
 
-### Pretrained Model
-
-We provide one model pre-trained on VOC2007 trainval + VOC2012 trainval (detection and rotation tasks) in checkpoints folder.
-
 ## Run
+
+To pre-train your own model, run:
+
+```
+python train_ssd.py --config-file configs/baseline_rs.yaml
+```
 
 Test the pre-trained model on clipart to check mAP
 
 ```
-python eval_ssd.py --config-file configs/clipart_self_ade.yaml --weights checkpoints/pretrained.pth
+python eval_ssd.py --config-file configs/clipart_self_ade.yaml --weights /path/to/last/checkpoint.pth
 ```
 
 Run Adaptive evaluation on clipart using the pre-trained model
 
 ```
-python self_ade.py --config-file configs/clipart_self_ade.yaml --weights checkpoints/pretrained.pth
+python self_ade.py --config-file configs/clipart_self_ade.yaml --weights /path/to/last/checkpoint.pth
 --warmup_step 20 --self_ade_iterations 50 MODEL.SELF_SUPERVISOR.SELF_ADE_BREAKPOINTS 21,25,30,35,40,
 ```
 
